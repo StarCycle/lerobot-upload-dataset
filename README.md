@@ -36,8 +36,10 @@ chmod a+x hfd.sh
 ./hfd.sh StarCycle/calvin_lmdb --dataset --tool aria2c -x 9
 ```
 
-Now move the modified `lmdb_format.py` and `push_dataset_to_hub.py` to specific locations, and run:
+Now move the modified `lmdb_format.py` and `push_dataset_to_hub.py` to specific locations (I have done that), and run:
 
 ```
 python lerobot/scripts/push_dataset_to_hub.py  --raw-dir path/to/lmdb/folder --raw-format lmdb --repo-id StarCycle/test --local-dir StarCycle/test --push-to-hub 0 --force-override 1
 ```
+
+HuggingFace does not accept file number more than 10, but calvin has more episodes than that. To satisfy their requirements, I save 100 episodes in an mp4 file. 
