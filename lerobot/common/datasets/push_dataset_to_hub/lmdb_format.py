@@ -179,7 +179,6 @@ def to_hf_dataset(data_dict, video) -> Dataset:
     features["next.done"] = Value(dtype="bool", id=None)
     features["index"] = Value(dtype="int64", id=None)
 
-    import pdb; pdb.set_trace()
     hf_dataset = Dataset.from_dict(data_dict, features=Features(features))
     hf_dataset.set_transform(hf_transform_to_torch)
     return hf_dataset
